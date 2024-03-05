@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ONLINE CALCULATOR</title>
+        <link rel="stylesheet" href="style1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body background="D:\Intership-CodSoft\Lvl1-Landing page\image\cityscape.jpg">
+        <h2  class="heading">CALCULATOR</h2>
+        <div class="container">
+           
+            <div class="calculator">
+                        <input type="text" placeholder="0" id="opsr">
+                        <button  onclick="Clear()" >AC</button>
+                        <button  onclick="Delete()">DEL</button>
+                        <button  onclick="display('.')">.</button>
+                        <button  onclick="display('/')">/</button>
+                        <button  onclick="display('7')">7</button>
+                        <button  onclick="display('8')">8</button>
+                        <button  onclick="display('9')">9</button>
+                        <button  onclick="display('*')">*</button>
+                        <button  onclick="display('4')">4</button>
+                        <button  onclick="display('5')">5</button>
+                        <button  onclick="display('6')">6</button>
+                        <button  onclick="display('-')">-</button>
+                        <button  onclick="display('1')">1</button>
+                        <button  onclick="display('2')">2</button>
+                        <button  onclick="display('3')">3</button>
+                        <button  onclick="display('+')">+</button>
+                        <button  onclick="display('00')">00</button>
+                        <button  onclick="display('0')">0</button>
+                        <button  onclick="calculate()" class="equal">=</button>
+            </div>
+        </div>
+
+        <script>
+            let opscrn=document.getElementById("opsr");
+
+            function display(num)
+            {
+                opscrn.value+=num;
+            }
+            function calculate()
+            {
+                try{
+                    opscrn.value=eval(opscrn.value);
+                }
+                catch(err)
+                {
+                    alert("UNDEFINED")
+                }
+
+            }
+            function Clear()
+            {
+                 opscrn.value="";
+            }
+            function Delete()
+            {
+                opscrn.value=opscrn.value.slice(0,-1);
+            }
+        </script>
+    </body>
+</html>
